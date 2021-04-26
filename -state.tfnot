@@ -1,0 +1,13 @@
+terraform {
+  backend "s3" {
+    # These values are copied from the state.tf created with our account starter. 
+    # We will update the copied values for key.
+    acl            = "bucket-owner-full-control"
+    encrypt        = true
+    key            = ""
+    region         = ""
+    bucket         = ""
+    dynamodb_table = ""
+    kms_key_id     = ""
+  }
+}
