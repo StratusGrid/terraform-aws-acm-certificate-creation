@@ -4,13 +4,14 @@ resource "aws_acm_certificate" "acm_module_certificate" {
   validation_method = "DNS"
 
 //  tags = local.common_tags
+  tags = var.input_tags
 
-  tags = merge(
-    var.input_tags,
-    {
-      "Name" = "${var.name_prefix}-${var.acm_domain_name}${var.name_suffix}"
-    },
-  )
+//  tags = merge(
+//    var.input_tags,
+//    {
+//      "Name" = "${var.name_prefix}-${var.acm_domain_name}${var.name_suffix}"
+//    },
+//  )
 
   lifecycle {
     create_before_destroy = true
