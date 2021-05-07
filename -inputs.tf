@@ -73,6 +73,12 @@ variable "name_prefix" {
   type            = string
 }
 
+variable "name_suffix" {
+  description = "String to append to object names. This is optional, so start with dash if using."
+  type        = string
+  default     = ""
+}
+
 variable "input_tags" {
   description = "A map of tags to add to all resources"
   type        = map(string)
