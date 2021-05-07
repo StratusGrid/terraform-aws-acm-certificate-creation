@@ -1,6 +1,6 @@
 # Certificate creation
 resource "aws_acm_certificate" "acm_module_certificate" {
-  domain_name       = var.acm_cert_name
+  domain_name       = var.acm_domain_name
   validation_method = "DNS"
 
   tags = local.common_tags
@@ -8,7 +8,7 @@ resource "aws_acm_certificate" "acm_module_certificate" {
 //  tags = merge(
 //    var.input_tags,
 //    {
-//      "Name" = "${var.name_prefix}-${var.acm_cert_name}${var.name_suffix}"
+//      "Name" = "${var.name_prefix}-${var.acm_domain_name}${var.name_suffix}"
 //    },
 //  )
 

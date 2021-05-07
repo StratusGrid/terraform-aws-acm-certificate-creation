@@ -79,7 +79,7 @@ variable "input_tags" {
   default     = {}
 }
 
-variable "acm_cert_name" {
+variable "acm_domain_name" {
   description = "Name of the certificate to be used in AWS ACM"
   type        = string
 }
