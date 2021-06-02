@@ -4,12 +4,14 @@ variable "input_tags" {
   default     = {}
 }
 
-variable "acm_domain_name" {
-  description = "Name of the certificate to be used in AWS ACM"
-  type        = string
-}
-
-variable "zone_id" {
-  description = "Route53 zone ID"
-  type        = string
+variable "site_mappings" {
+  default = {}
+  description = "Map of static websites to be created and distributed through CloudFront."
+  type = map(object(
+    {
+      url                   = string
+      vanity_url            = string
+      vanity_hosted_zone    = string
+    }
+  ))
 }
