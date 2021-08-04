@@ -1,1 +1,35 @@
-# Terraform Customer Infrastructure Template
+```
+# Variables definition
+variable "acm_domain_name" {
+  description = "Certificate name prefix trailed by hosted zone name"
+  type = list(string)
+}
+
+variable "hosted_zone_name" {
+  description = "Route53 hosted zone name"
+  type        = string
+}
+
+acm_domain_name   = ["engineering", "sales"]
+hosted_zone_name  = "example.com"
+```
+```
+data "aws_route53_zone" "hosted_zone_id" {
+  name = var.hosted_zone_name
+  private_zone = false
+}
+```
+```
+# Module call
+module "new_record_and_certificate" {
+  source = "github.com/StratusGrid/terraform-aws-acm-certificate-creation"
+  
+  for_each        = toset(var.acm_domain_name)
+  acm_domain_name = "${each.key}.${var.hosted_zone_name}"
+  zone_id         = data.aws_route53_zone.hosted_zone_id.zone_id
+  
+  input_tags      = {
+    "Name" = "${each.key}.${var.hosted_zone_name}"
+    }
+}
+```

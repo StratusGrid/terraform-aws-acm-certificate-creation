@@ -11,7 +11,7 @@ resource "aws_acm_certificate" "acm_module_certificate" {
   }
 }
 
-# Route53 record creation
+# Route53 domain record validation
 resource "aws_route53_record" "domain_validation_record" {
   for_each = {
     for dvo in aws_acm_certificate.acm_module_certificate.domain_validation_options : dvo.domain_name => {
