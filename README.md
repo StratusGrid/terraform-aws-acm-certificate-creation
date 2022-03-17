@@ -1,4 +1,10 @@
 ```
+This repo is used to create a certificate using Route53 DNS validation. It requires a hosted zone to which the IAM 
+principal creating the resource has access.
+```
+```
+Example Usage:
+
 # Variables definition
 variable "acm_certificate_name" {
   description = "Certificate name prefix which will be trailed by the hosted-zone name"
