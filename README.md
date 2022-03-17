@@ -7,6 +7,7 @@ principal creating the resource has access.
 ### Example Usage:
 ```
 # Variables definition
+
 variable "acm_certificate_name" {
   description = "Certificate name prefix which will be trailed by the hosted-zone name"
   type = list(string)
@@ -17,8 +18,8 @@ variable "hosted_zone_name" {
   type        = string
 }
 
-acm_domain_name   = ["engineering", "sales"]
-hosted_zone_name  = "example.com"
+acm_certificate_name  = ["engineering", "sales"]
+hosted_zone_name      = "example.com"
 ```
 ```
 data "aws_route53_zone" "hosted_zone_id" {
@@ -28,6 +29,7 @@ data "aws_route53_zone" "hosted_zone_id" {
 ```
 ```
 # Module call
+
 module "new_record_and_certificate" {
   source = "github.com/StratusGrid/terraform-aws-acm-certificate-creation"
   
