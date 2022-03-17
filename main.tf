@@ -1,6 +1,6 @@
 # Certificate creation
 resource "aws_acm_certificate" "acm_module_certificate" {
-  domain_name       = var.acm_domain_name
+  domain_name       = var.acm_certificate_name
   validation_method = "DNS"
 
   tags = local.local_tags
