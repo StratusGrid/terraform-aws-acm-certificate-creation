@@ -1,7 +1,7 @@
 ```
 # Variables definition
-variable "acm_domain_name" {
-  description = "Certificate name prefix trailed by hosted zone name"
+variable "acm_certificate_name" {
+  description = "Certificate name prefix which will be trailed by the hosted-zone name"
   type = list(string)
 }
 
@@ -24,7 +24,7 @@ data "aws_route53_zone" "hosted_zone_id" {
 module "new_record_and_certificate" {
   source = "github.com/StratusGrid/terraform-aws-acm-certificate-creation"
   
-  for_each        = toset(var.acm_domain_name)
+  for_each        = toset(var.acm_certificate_name)
   acm_domain_name = "${each.key}.${var.hosted_zone_name}"
   zone_id         = data.aws_route53_zone.hosted_zone_id.zone_id
   
