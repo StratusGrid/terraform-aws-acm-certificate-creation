@@ -11,6 +11,8 @@
 # TF Plans
 **/plans
 
-# Mac specific
+# Certs
+*.pem
+
 .idea
 .DS_Store
