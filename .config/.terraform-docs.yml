@@ -1,0 +1,47 @@
+version: ""
+
+formatter: markdown table
+
+name: terraform-aws-acm-certificate-creation
+
+content: |-
+  # terraform-aws-acm-certificate-creation
+
+  GitHub: [StratusGrid/terraform-aws-terraform-aws-acm-certificate-creation](https://github.com/StratusGrid/terraform-aws-acm-certificate-creation)
+
+  This module is used to create a certificate using Route53 DNS validation. It requires a hosted zone to which the IAM
+  principal creating the resource has access.
+
+  ## Examples
+
+  ```hcl
+  {{ include "examples/example1.tfnot" }}
+  ```
+  ---
+
+  {{ .Requirements }}
+
+  {{ .Resources }}
+
+  {{ .Inputs }}
+
+  {{ .Outputs }}
+
+  ---
+
+  Note, manual changes to the README will be overwritten when the documentation is updated. To update the documentation, run `terraform-docs -c .config/.terraform-docs.yml`
+
+sections:
+  show:
+    - requirements
+    - resources
+    - inputs
+    - outputs
+
+sort:
+  enabled: true
+  by: name
+
+output:
+  file: README.md
+  mode: replace
