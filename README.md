@@ -42,7 +42,7 @@ module "new_record_and_certificate" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_acm_domain_name"></a> [acm\_domain\_name](#input\_acm\_domain\_name) | Name of the certificate to be used in AWS ACM | `string` | n/a | yes |
+| <a name="input_acm_domain_name"></a> [acm\_domain\_name](#input\_acm\_domain\_name) | Name of the certificate to be created in AWS ACM | `string` | n/a | yes |
 | <a name="input_input_tags"></a> [input\_tags](#input\_input\_tags) | A map of tags to add to all resources | `map(string)` | `{}` | no |
 | <a name="input_zone_id"></a> [zone\_id](#input\_zone\_id) | Route53 zone ID | `string` | n/a | yes |
 
