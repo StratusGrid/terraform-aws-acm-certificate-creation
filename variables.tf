@@ -5,7 +5,7 @@ variable "input_tags" {
 }
 
 variable "acm_domain_name" {
-  description = "Name of the certificate to be used in AWS ACM"
+  description = "Name of the certificate to be created in AWS ACM"
   type        = string
 }
 
