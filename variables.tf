@@ -10,6 +10,6 @@ variable "acm_domain_name" {
 }
 
 variable "zone_id" {
-  description = "Route53 zone ID"
+  description = "Route53 zone ID."
   type        = string
 }
