@@ -33,7 +33,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@b55428b1882923874294fa556849718a1d7f2ca5 # tag=v4
       - name: Install Terraform v${{ matrix.version }}
         uses: hashicorp/setup-terraform@v1
         with:
