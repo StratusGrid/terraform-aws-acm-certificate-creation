@@ -1,3 +1,4 @@
+#  Local .terraform directories
 # Local .terraform directories
 **/.terraform/*
 
@@ -5,9 +6,12 @@
 *.tfstate
 *.tfstate.*
 
+# .tfvars files
+*.tfvars
 # Lock File
 .terraform.lock.**
 
+.terraform.lock.hcl
 #TF Hash Lock File - Module Specific
 .terraform.lock.hcl
 
@@ -43,3 +47,6 @@ override.tf.json
 # IntelliJ
 .idea/workspace.xml
 .idea
+
+.pre-commit-config.yaml
+.prettierignore
