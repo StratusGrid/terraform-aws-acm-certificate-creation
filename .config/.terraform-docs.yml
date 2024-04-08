@@ -1,3 +1,5 @@
+header-from: ./.config/header.md
+
 version: ""
 
 formatter: markdown table
@@ -5,6 +7,8 @@ formatter: markdown table
 name: terraform-aws-acm-certificate-creation
 
 content: |-
+  {{ .Header }}
+
   # terraform-aws-acm-certificate-creation
 
   GitHub: [StratusGrid/terraform-aws-terraform-aws-acm-certificate-creation](https://github.com/StratusGrid/terraform-aws-acm-certificate-creation)
@@ -33,6 +37,7 @@ content: |-
 
 sections:
   show:
+    - header
     - requirements
     - resources
     - inputs
